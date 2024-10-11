@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification de Connexion</title>
+</head>
+<body>
+    <h2 id="network-status">Vérification du réseau...</h2>
+
+    <script>
+        function updateNetworkStatus() {
+            const statusElement = document.getElementById('network-status');
+            if (navigator.onLine) {
+                statusElement.innerHTML = "EN LIGNE.";
+                statusElement.style.color = "green";
+            } else {
+                statusElement.innerHTML = "HORS LIGNE.";
+                statusElement.style.color = "red";
+            }
+        }
+
+        // Mettre à jour l'état lors du chargement de la page et lors des changements de connexion
+        window.addEventListener('load', updateNetworkStatus);
+        window.addEventListener('online', updateNetworkStatus);
+        window.addEventListener('offline', updateNetworkStatus);
+    </script>
+</body>
+</html>
