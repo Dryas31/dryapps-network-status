@@ -4,26 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vérification de Connexion</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Rend l'élément pleine hauteur de la fenêtre */
+            background-color: white;
+        }
+        #network-status {
+            font-size: 18px; /* Taille du texte */
+            font-weight: bold;
+            color: green; /* Couleur par défaut */
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h2 id="network-status">Vérification du réseau...</h2>
+    <p id="network-status">Vérification du réseau...</p>
 
     <script>
         function updateNetworkStatus() {
             const statusElement = document.getElementById('network-status');
             if (navigator.onLine) {
-                statusElement.innerHTML = "EN LIGNE.";
+                statusElement.innerHTML = " EN LIGNE📶";
                 statusElement.style.color = "green";
             } else {
-                statusElement.innerHTML = "HORS LIGNE.";
+                statusElement.innerHTML = "HORS LIGNE❌";
                 statusElement.style.color = "red";
             }
         }
 
-        // Mettre à jour l'état lors du chargement de la page et lors des changements de connexion
+        // Vérifier l'état du réseau au chargement de la page et à chaque changement
         window.addEventListener('load', updateNetworkStatus);
         window.addEventListener('online', updateNetworkStatus);
         window.addEventListener('offline', updateNetworkStatus);
     </script>
 </body>
 </html>
+
