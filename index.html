@@ -34,10 +34,10 @@
         function updateNetworkStatus() {
             const statusElement = document.getElementById('network-status');
             if (navigator.onLine) {
-                statusElement.innerHTML = "EN LIGNE📶";
+                statusElement.innerHTML = "EN LIGNE";
                 statusElement.style.color = "green";
             } else {
-                statusElement.innerHTML = "HORS LIGNE❌";
+                statusElement.innerHTML = "HORS LIGNE";
                 statusElement.style.color = "red";
             }
         }
